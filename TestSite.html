@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Onsite Filing Tracker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <!-- my JS code -->
+  <script>
+    function addRow(){
+      var no = document.getElementById('no').value;
+      var lname = document.getElementById('lname').value;
+      var fname = document.getElementById('fname').value; 
+      var table = document.getElementByTagName('table')[0];
+      var newRow = table.insertRow(0); 
+      var cel1 = newRow.insertCel(0);
+      var cel2 = newRow.insertCel(1);
+      var cel3 = newRow.insertCel(2);
+ 
+      cell1.innerHTML = no;
+      cell2.innerHTML = fname;
+      cell3.innerHTML = lname;
+    }
+  }
+  </script>
+ 
+</head>
+<body>
+<!-- START Tabs  -->
+<div class="container">
+<h2>Onsite Filing Tracker</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#menu0">Open</a></li>
+  </ul>
+<!-- END Tabs  -->
+<!-- START menu0: Onsite Filinbg Tracker  -->
+  <div class="tab-content">
+    <div id="menu0" class="tab-pane fade in active">
+      <div class="container">
+  <h4>Explanation about the table:</h4>
+  <!-- modal btn -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="addRow()">Insert new data</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID#</th>
+        <th>Surname</th>
+        <th>Name</th>
+<!--         <th>Expiration Date</th>
+        <th>Total Days to Process</th>
+        <th>Pending(drop down)</th>
+        <th>Case Type</th>
+        <th>Legal Review(drop down)</th>
+        <th>Date Shipped</th>
+        <th>FedEx No.</th>
+        <th>Checks Used(drop down</th>
+        <th>Service Center(drop down: CA, NE, VT)</th>
+        <th>Onsite Filing Team(drop down)</th>
+        <th>Cost Center</th>
+        <th>Comments(140-280 character limit)</th>
+        <th>Last editied by and date</th> -->
+      </tr>
+    </thead>
+    <tbody>
+     
+    </tbody>
+   </table>
+  </div>
+</div>
+</div>
+<!-- START menu0: Onsite Filinbg Tracker  -->
+<!-- START Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">ID#:</label>
+            <input type="number" class="form-control" id="recipient-name" id="fname">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">First Name:</label>
+            <input type="text" class="form-control" id="recipient-name" id="lname">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">Last Name:</label>
+            <input type="text" class="form-control" id="recipient-name" id="fname">
+          </div>
+          </form>
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onsubmit="addRow()">Add row</button>
+    </div>
+  </div>
+</div>
+<!-- END Modal -->
+ 
+</div>
+</body>
+</html>
