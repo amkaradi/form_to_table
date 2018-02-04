@@ -4,37 +4,10 @@
   <title>Onsite Filing Tracker</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-  <!-- my JS code -->
-  <script>
-    function addRow(){
-      var no = document.getElementById('no').value;
-      var lname = document.getElementById('lname').value;
-      var fname = document.getElementById('fname').value; 
-      var table = document.getElementByTagName('table')[0];
-      var newRow = table.insertRow(0); 
-      var cel1 = newRow.insertCel(0);
-      var cel2 = newRow.insertCel(1);
-      var cel3 = newRow.insertCel(2);
- 
-      cell1.innerHTML = no;
-      cell2.innerHTML = fname;
-      cell3.innerHTML = lname;
-    }
-  }
-  </script>
- 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- START Tabs  -->
@@ -50,7 +23,7 @@
       <div class="container">
   <h4>Explanation about the table:</h4>
   <!-- modal btn -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="addRow()">Insert new data</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Insert new data</button>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -90,29 +63,47 @@
         </button>
       </div>
       <div class="modal-body">
+        <!-- for html attribute will always match the id name -->
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="form-control-label">ID#:</label>
-            <input type="number" class="form-control" id="recipient-name" id="fname">
+            <label for="recipient-id" class="form-control-label">ID#:</label>
+            <input type="number" class="form-control" id="recipient-id">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="form-control-label">First Name:</label>
-            <input type="text" class="form-control" id="recipient-name" id="lname">
+            <label for="recipient-fname" class="form-control-label">First Name:</label>
+            <input type="text" class="form-control" id="recipient-fname">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="form-control-label">Last Name:</label>
-            <input type="text" class="form-control" id="recipient-name" id="fname">
+            <label for="recipient-lname" class="form-control-label">Last Name:</label>
+            <input type="text" class="form-control" id="recipient-lname">
           </div>
           </form>
           </div>
           <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onsubmit="addRow()">Add row</button>
+        <button type="button" class="btn btn-primary" onclick="addRow()">Add row</button>
     </div>
   </div>
 </div>
 <!-- END Modal -->
  
 </div>
+<script>
+  function addRow(){
+    var no = document.getElementById('recipient-id').value;
+    var lname = document.getElementById('recipient-lname').value;
+    var fname = document.getElementById('recipient-fname').value; 
+    var table = document.getElementsByTagName('table')[0];
+    var newRow = table.insertRow(0); 
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+
+    cell1.innerHTML = no;
+    cell2.innerHTML = fname;
+    cell3.innerHTML = lname;
+  }
+</script>
+
 </body>
 </html>
